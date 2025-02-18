@@ -42,10 +42,8 @@
   <!-- End Sidebar-->
 
   <main id="main" class="main">
-
-  
     <section class="section dashboard">
-     
+      @yield('content')
     </section>
 
   </main><!-- End #main -->

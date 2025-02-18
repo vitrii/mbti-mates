@@ -33,6 +33,30 @@ Route::get('/mulai-test-mbti', function () {
 $question = Question::all();
 return view('users.dashboard',['questions' => $question]);
 });
+
+// Route::get('/mulai-test-mbti', function () {
+// $question = Question::all();
+// return view('users.test-mbti',['questions' => $question]);
+// });
+
+// Route::get('/mulai-test-mbti/test', function () {
+// $question = Question::all();
+// return view('users.test-mbti',['questions' => $question]);
+// });
+
+//Solusi Alternatif: Gunakan Parameter di Route
+Route::get('/mulai-test-mbti/{type}', function ($type) {
+        $question = Question::all();
+    
+        if ($type === 'dashboard') {
+            return view('users.dashboard', ['questions' => $question]);
+        } elseif ($type === 'test') {
+            return view('users.test-mbti', ['questions' => $question]);
+        } else {
+            abort(404);
+        }
+    });
+
 Route::post('/hasil', [QuestionController::class, 'calculate']);
 });
 
@@ -136,6 +160,18 @@ Route::get('/kepribadian-esfp', function () {
 Route::get('/guide', function () {
         return view('guide');
 });
+
+// Route::get('personalities', function () {
+//         return view('personalities.index');
+//     });
+
+Route::get('personalities', function () {
+        return view('personalities.index');
+    })->name('personalities.index');
+    
+// Route::get('/test-mbti', function () {
+//         return view('test-mbti');
+// });
 
 Route::get('/login', function () {
         return view('auth.login');

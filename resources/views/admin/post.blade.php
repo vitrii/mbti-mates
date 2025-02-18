@@ -2,7 +2,7 @@
 <html :class="{ 'theme-dark': dark }" x-data="data()" ang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @include('layout.head', ['title' => 'Mulai Test'])
+    @include('layouts.head', ['title' => 'Mulai Test'])
     @livewireStyles
     <link href="{{ asset('css/tailwind.output.css') }}" rel="stylesheet">
     <style>
@@ -15,9 +15,9 @@
 
 <body>
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
-        @include('layout.sidebar')
+        @include('layouts.sidebar')
         <div class="flex flex-col flex-1 w-full">
-            @include('layout.navbar')
+            {{-- @include('layouts.navbar') --}}
             @if (Route::is('admin.post'))
                 <main class="h-full overflow-y-auto">
                     <div class="container px-6 mx-auto grid">

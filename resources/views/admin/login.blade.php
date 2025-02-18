@@ -3,7 +3,7 @@
 
 
 <head>
-    @include('layout.head', ['title' => 'Admin Login'])
+    @include('layouts.head', ['title' => 'Admin Login'])
     <link href="{{ asset('css/tailwind.output.css') }}" rel="stylesheet">
 </head>
 

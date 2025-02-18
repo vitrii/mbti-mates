@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('personality_types', function (Blueprint $table) {
+        Schema::create('personalities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('report_id')->constrained('reports')->onDelete('cascade'); // Relasi ke tabel reports
             $table->string('tipe');
+            $table->string('nama_julukan');
             $table->string('deskripsi');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personality_types');
+        Schema::dropIfExists('personalities');
     }
 };
