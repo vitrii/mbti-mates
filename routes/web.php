@@ -89,6 +89,20 @@ Route::get('/questions', function () {
 Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
 });
 
+Route::get('author',function (){
+        return view('layouts.admin');
+    
+    });
+
+    Route::get('/author-dashboard',function (){
+        return view('author-dashboard');
+    
+    });
+        
+        // Route::get('/', function () {
+        //     return view('author.index');
+        // });
+
 Route::get('/personality-type', function () {
         return view('personality-type');
 });
